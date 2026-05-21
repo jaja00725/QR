@@ -189,12 +189,11 @@
     }
 
     .binary {
-      position: relative;
       margin: 0;
       padding: 22px 16px 22px 18px;
       line-height: 1.7;
-      white-space: pre-wrap;
       font-weight: bold;
+      letter-spacing: 0.06em;
       border: 2px solid #000000;
       background:
         repeating-linear-gradient(
@@ -206,6 +205,9 @@
         ),
         #ffffff;
       box-shadow: 9px 9px 0 rgba(0, 0, 0, 0.16);
+      overflow-wrap: anywhere;
+      word-break: normal;
+      white-space: normal;
     }
 
     .binary .normal {
@@ -244,8 +246,7 @@
   <main>
     <section class="section intro-section">
       <p class="intro">
-        Pamatuješ si na mě? Tolik bolesti nemůže zůstat<br>
-        bez <strong class="threat">TREST</strong>U!
+        Pamatuješ si na mě? Tolik bolesti nemůže zůstat bez <strong class="threat">TREST</strong>U!
       </p>
     </section>
 
@@ -260,11 +261,7 @@
     </section>
 
     <section class="section binary-section">
-      <p class="binary"><span class="normal">01000001 01001110 01001110 01000001</span>
-00100000 <span class="normal">01000010 01011001 01001100</span>
-<span class="normal">01000001</span> 00100000 <span class="normal">01001101 01001111 01001010</span>
-<span class="normal">01000101</span> 00100000 <span class="normal">01000100 01000011</span>
-<span class="normal">01000101 01010010 01000001</span> 00100001</p>
+      <p class="binary"><span class="normal">01000001 01001110 01001110 01000001</span> 00100000 <span class="normal">01000010 01011001 01001100 01000001</span> 00100000 <span class="normal">01001101 01001111 01001010 01000101</span> 00100000 <span class="normal">01000100 01000011 01000101 01010010 01000001</span> 00100001</p>
     </section>
   </main>
 </body>
