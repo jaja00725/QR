@@ -18,14 +18,14 @@
       margin: 0;
       min-height: 100vh;
       background:
-        radial-gradient(circle at 50% 22%, rgba(120, 0, 0, 0.12), transparent 18%),
-        radial-gradient(circle at 20% 80%, rgba(0, 0, 0, 0.08), transparent 24%),
+        radial-gradient(circle at 50% 18%, rgba(0, 0, 0, 0.08), transparent 22%),
+        radial-gradient(circle at 12% 78%, rgba(120, 0, 0, 0.06), transparent 26%),
         repeating-linear-gradient(
           0deg,
-          rgba(0, 0, 0, 0.035) 0px,
-          rgba(0, 0, 0, 0.035) 1px,
+          rgba(0, 0, 0, 0.028) 0px,
+          rgba(0, 0, 0, 0.028) 1px,
           transparent 1px,
-          transparent 6px
+          transparent 7px
         ),
         #ffffff;
       color: #050505;
@@ -38,24 +38,24 @@
     body::before {
       content: "";
       position: fixed;
-      inset: 14px;
-      border: 1px solid rgba(0, 0, 0, 0.35);
+      inset: 18px;
+      border: 1px solid rgba(0, 0, 0, 0.28);
       pointer-events: none;
       z-index: 10;
     }
 
     body::after {
-      content: "NEOTÁČEJ SE";
+      content: "";
       position: fixed;
-      right: -44px;
-      top: 45%;
-      transform: rotate(90deg);
-      font-size: 11px;
-      font-weight: bold;
-      letter-spacing: 0.42em;
-      color: rgba(120, 0, 0, 0.8);
+      right: 26px;
+      top: 26px;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(120, 0, 0, 0.55);
+      border-radius: 50%;
       pointer-events: none;
       z-index: 11;
+      opacity: 0.8;
     }
 
     main {
@@ -66,41 +66,40 @@
       padding: 54px 40px 62px;
       min-height: 100vh;
       background:
-        linear-gradient(90deg, rgba(0, 0, 0, 0.05), transparent 12%, transparent 88%, rgba(0, 0, 0, 0.035)),
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.05),
+          transparent 13%,
+          transparent 87%,
+          rgba(0, 0, 0, 0.035)
+        ),
         #ffffff;
-      border-left: 3px solid #000;
-      border-right: 1px solid rgba(0, 0, 0, 0.45);
+      border-left: 2px solid rgba(0, 0, 0, 0.8);
+      border-right: 1px solid rgba(0, 0, 0, 0.25);
       box-shadow:
-        0 0 0 1px rgba(0, 0, 0, 0.08),
         18px 0 0 rgba(0, 0, 0, 0.035),
-        -18px 0 0 rgba(120, 0, 0, 0.04);
+        -18px 0 0 rgba(120, 0, 0, 0.035);
     }
 
     main::before {
-      content: "SPIS / STOPAM / 04";
+      content: "";
       position: absolute;
-      top: 20px;
+      top: 28px;
       left: 40px;
       right: 40px;
-      padding-bottom: 7px;
-      border-bottom: 2px solid #000;
-      font-size: 10px;
-      font-weight: bold;
-      letter-spacing: 0.28em;
-      color: #760000;
+      height: 2px;
+      background: #000000;
+      opacity: 0.85;
     }
 
     main::after {
-      content: "dcera";
+      content: "";
       position: absolute;
-      bottom: 22px;
+      bottom: 24px;
       left: 40px;
-      padding: 4px 8px;
-      border: 1px solid rgba(120, 0, 0, 0.75);
-      font-size: 10px;
-      font-weight: bold;
-      letter-spacing: 0.24em;
-      color: #760000;
+      width: 64px;
+      height: 1px;
+      background: rgba(120, 0, 0, 0.75);
       transform: rotate(-2deg);
     }
 
@@ -109,28 +108,37 @@
       margin: 0 0 62px;
       padding: 18px 16px;
       line-height: 1.5;
-      border: 2px solid rgba(0, 0, 0, 0.75);
+      border: 2px solid rgba(0, 0, 0, 0.7);
       background: #ffffff;
       box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.12);
-      text-shadow: 1px 0 rgba(120, 0, 0, 0.25);
+      text-shadow: 1px 0 rgba(120, 0, 0, 0.22);
     }
 
     .intro::before {
-      content: "VAROVÁNÍ";
+      content: "";
       position: absolute;
-      top: -24px;
-      left: -2px;
-      padding: 3px 8px;
-      background: #760000;
-      color: #ffffff;
-      font-size: 10px;
-      font-weight: bold;
-      letter-spacing: 0.28em;
+      left: -13px;
+      top: -13px;
+      width: 26px;
+      height: 26px;
+      border-left: 2px solid #760000;
+      border-top: 2px solid #760000;
+    }
+
+    .intro::after {
+      content: "";
+      position: absolute;
+      right: -13px;
+      bottom: -13px;
+      width: 26px;
+      height: 26px;
+      border-right: 2px solid #760000;
+      border-bottom: 2px solid #760000;
     }
 
     .threat {
       display: inline-block;
-      padding: 2px 8px 3px;
+      padding: 1px 7px 2px;
       background: #000000;
       color: #ffffff;
       font-size: 18px;
@@ -138,9 +146,7 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       border: 2px solid #760000;
-      box-shadow:
-        3px 3px 0 #760000,
-        -1px -1px 0 #000000;
+      box-shadow: 3px 3px 0 #760000;
       transform: rotate(-2deg);
     }
 
@@ -151,8 +157,8 @@
       border: 2px solid #000000;
       background: #ffffff;
       color: #000000;
-      font-weight: bold;
-      box-shadow: 6px 6px 0 rgba(120, 0, 0, 0.28);
+      font-weight: normal;
+      box-shadow: 6px 6px 0 rgba(120, 0, 0, 0.22);
       transform: rotate(-1deg);
     }
 
@@ -161,23 +167,13 @@
       margin: 0 0 28px;
       padding: 9px 6px;
       text-align: center;
-      font-weight: bold;
+      font-weight: normal;
       font-size: 14px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       border-top: 2px solid #000000;
       border-bottom: 2px solid #000000;
       color: #000000;
-    }
-
-    .title::before {
-      content: "šifra";
-      position: absolute;
-      left: 0;
-      top: -22px;
-      font-size: 10px;
-      letter-spacing: 0.24em;
-      color: #760000;
     }
 
     .columns-image {
@@ -202,26 +198,13 @@
       background:
         repeating-linear-gradient(
           90deg,
-          rgba(120, 0, 0, 0.08) 0px,
-          rgba(120, 0, 0, 0.08) 1px,
+          rgba(120, 0, 0, 0.07) 0px,
+          rgba(120, 0, 0, 0.07) 1px,
           transparent 1px,
           transparent 12px
         ),
         #ffffff;
       box-shadow: 9px 9px 0 rgba(0, 0, 0, 0.16);
-    }
-
-    .binary::before {
-      content: "PŘEPIS NALEZEN";
-      position: absolute;
-      top: -26px;
-      left: -2px;
-      padding: 3px 8px;
-      background: #000000;
-      color: #ffffff;
-      font-size: 10px;
-      font-weight: bold;
-      letter-spacing: 0.24em;
     }
 
     .binary::after {
@@ -231,7 +214,7 @@
       bottom: 12px;
       width: 36px;
       height: 36px;
-      border: 2px solid rgba(120, 0, 0, 0.8);
+      border: 2px solid rgba(120, 0, 0, 0.75);
       border-radius: 50%;
       transform: rotate(-12deg);
     }
@@ -280,7 +263,7 @@
   <main>
     <p class="intro">
       Pamatuješ si na mě? Tolik bolesti nemůže zůstat<br>
-      bez <strong class="threat">trestu</strong>!
+      bez <strong class="threat">TREST</strong>U!
     </p>
 
     <p class="handle">@ STOPAM</p>
