@@ -138,12 +138,10 @@
     }
 
     .binary {
-      position: relative;
       margin: 0;
       padding: 22px 16px 22px 18px;
       font-size: 14px;
       line-height: 1.7;
-      white-space: pre-wrap;
       font-weight: normal;
       letter-spacing: 0.06em;
       border: 2px solid #000000;
@@ -157,6 +155,9 @@
         ),
         #ffffff;
       box-shadow: 9px 9px 0 rgba(0, 0, 0, 0.16);
+      overflow-wrap: anywhere;
+      word-break: normal;
+      white-space: normal;
     }
 
     .binary .bold {
@@ -172,9 +173,10 @@
       padding: 22px 16px 22px 18px;
       font-size: 14px;
       line-height: 1.7;
-      white-space: pre-wrap;
+      white-space: normal;
       letter-spacing: 0.06em;
-      word-break: break-word;
+      word-break: normal;
+      overflow-wrap: anywhere;
       border: 2px solid #000000;
       background:
         repeating-linear-gradient(
@@ -224,22 +226,16 @@
   <main>
     <section class="section text-section">
       <p class="text">
-        Už je to tak dávno! Pořád to ale bolí jako dnes.<br>
-        Pomstím se!
+        Už je to tak dávno! Pořád to ale bolí jako dnes. Pomstím se!
       </p>
 
       <p class="text second">
-        Zabili jste ji. A já zabiju vás. Jsi poslední na<br>
-        řadě.
+        Zabili jste ji. A já zabiju vás. Jsi poslední na řadě.
       </p>
     </section>
 
     <section class="section binary-section">
-      <p class="binary">01000001 01001110 01001110 01000001
-<span class="bold">00100000</span> 01000010 01011001 01001100
-01000001 <span class="bold">00100000</span> 01001101 01001111 01001010
-01000101 <span class="bold">00100000</span> 01000100 01000011
-01000101 01010010 01000001 <span class="bold">00100001</span></p>
+      <p class="binary">01000001 01001110 01001110 01000001 <span class="bold">00100000</span> 01000010 01011001 01001100 01000001 <span class="bold">00100000</span> 01001101 01001111 01001010 01000101 <span class="bold">00100000</span> 01000100 01000011 01000101 01010010 01000001 <span class="bold">00100001</span></p>
     </section>
 
     <section class="section arrows-section">
