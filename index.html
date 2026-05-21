@@ -18,12 +18,12 @@
       margin: 0;
       min-height: 100vh;
       background:
-        radial-gradient(circle at 50% 18%, rgba(0, 0, 0, 0.08), transparent 22%),
-        radial-gradient(circle at 12% 78%, rgba(120, 0, 0, 0.06), transparent 26%),
+        radial-gradient(circle at 50% 18%, rgba(0, 0, 0, 0.07), transparent 24%),
+        radial-gradient(circle at 12% 78%, rgba(120, 0, 0, 0.05), transparent 26%),
         repeating-linear-gradient(
           0deg,
-          rgba(0, 0, 0, 0.028) 0px,
-          rgba(0, 0, 0, 0.028) 1px,
+          rgba(0, 0, 0, 0.026) 0px,
+          rgba(0, 0, 0, 0.026) 1px,
           transparent 1px,
           transparent 7px
         ),
@@ -103,18 +103,21 @@
       transform: rotate(-2deg);
     }
 
-    .intro {
+    .section {
       position: relative;
-      margin: 0 0 62px;
+      background: #ffffff;
+    }
+
+    .intro-section {
+      margin: 0 0 54px;
       padding: 18px 16px;
       line-height: 1.5;
       border: 2px solid rgba(0, 0, 0, 0.7);
-      background: #ffffff;
       box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.12);
-      text-shadow: 1px 0 rgba(120, 0, 0, 0.22);
+      text-shadow: 1px 0 rgba(120, 0, 0, 0.2);
     }
 
-    .intro::before {
+    .intro-section::before {
       content: "";
       position: absolute;
       left: -13px;
@@ -125,7 +128,7 @@
       border-top: 2px solid #760000;
     }
 
-    .intro::after {
+    .intro-section::after {
       content: "";
       position: absolute;
       right: -13px;
@@ -136,23 +139,27 @@
       border-bottom: 2px solid #760000;
     }
 
+    .intro {
+      margin: 0;
+    }
+
     .threat {
-      display: inline-block;
-      padding: 1px 7px 2px;
-      background: #000000;
-      color: #ffffff;
-      font-size: 18px;
       font-weight: 900;
-      letter-spacing: 0.18em;
+      color: #000000;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      border: 2px solid #760000;
-      box-shadow: 3px 3px 0 #760000;
-      transform: rotate(-2deg);
+      text-shadow:
+        1px 0 #000000,
+        0 1px rgba(120, 0, 0, 0.5);
+    }
+
+    .handle-section {
+      margin: 0 0 58px;
     }
 
     .handle {
       display: inline-block;
-      margin: 0 0 64px;
+      margin: 0;
       padding: 8px 12px;
       border: 2px solid #000000;
       background: #ffffff;
@@ -162,17 +169,21 @@
       transform: rotate(-1deg);
     }
 
+    .image-section {
+      margin: 0 0 68px;
+      padding: 12px 14px 18px;
+      border-top: 2px solid #000000;
+      border-bottom: 2px solid #000000;
+      background: #ffffff;
+    }
+
     .title {
-      position: relative;
-      margin: 0 0 28px;
-      padding: 9px 6px;
+      margin: 0 0 10px;
       text-align: center;
       font-weight: normal;
       font-size: 14px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      border-top: 2px solid #000000;
-      border-bottom: 2px solid #000000;
       color: #000000;
     }
 
@@ -181,10 +192,14 @@
       width: 150px;
       max-width: 100%;
       height: auto;
-      margin: 0 auto 70px;
+      margin: 0 auto;
       filter: grayscale(1) contrast(1.65) brightness(0.9);
       mix-blend-mode: multiply;
       transform: rotate(1deg);
+    }
+
+    .binary-section {
+      margin: 0;
     }
 
     .binary {
@@ -248,12 +263,8 @@
         left: 26px;
       }
 
-      .intro {
+      .intro-section {
         padding: 16px 13px;
-      }
-
-      .threat {
-        font-size: 16px;
       }
     }
   </style>
@@ -261,22 +272,30 @@
 
 <body>
   <main>
-    <p class="intro">
-      Pamatuješ si na mě? Tolik bolesti nemůže zůstat<br>
-      bez <strong class="threat">TREST</strong>U!
-    </p>
+    <section class="section intro-section">
+      <p class="intro">
+        Pamatuješ si na mě? Tolik bolesti nemůže zůstat<br>
+        bez <strong class="threat">TREST</strong>U!
+      </p>
+    </section>
 
-    <p class="handle">@ STOPAM</p>
+    <section class="section handle-section">
+      <p class="handle">@ STOPAM</p>
+    </section>
 
-    <h1 class="title">AOPRK VEZNEV S ÍLIČK</h1>
+    <section class="section image-section">
+      <h1 class="title">AOPRK VEZNEV S ÍLIČK</h1>
 
-    <img class="columns-image" src="./sloupky.png" alt="Sloupky" />
+      <img class="columns-image" src="./sloupky.png" alt="Sloupky" />
+    </section>
 
-    <p class="binary"><span class="normal">01000001 01001110 01001110 01000001</span>
+    <section class="section binary-section">
+      <p class="binary"><span class="normal">01000001 01001110 01001110 01000001</span>
 00100000 <span class="normal">01000010 01011001 01001100</span>
 <span class="normal">01000001</span> 00100000 <span class="normal">01001101 01001111 01001010</span>
 <span class="normal">01000101</span> 00100000 <span class="normal">01000100 01000011</span>
 <span class="normal">01000101 01010010 01000001</span> 00100001</p>
+    </section>
   </main>
 </body>
 </html>
