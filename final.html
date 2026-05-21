@@ -10,39 +10,137 @@
       box-sizing: border-box;
     }
 
+    html {
+      background: #ffffff;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
-      background: #ffffff;
-      color: #000000;
+      background:
+        radial-gradient(circle at 30% 18%, rgba(0, 0, 0, 0.04), transparent 31%),
+        linear-gradient(rgba(0,0,0,0.025) 1px, transparent 1px),
+        #ffffff;
+      background-size: auto, 100% 8px, auto;
+      color: #050505;
       font-family: "Courier New", Courier, monospace;
       font-size: 21px;
       letter-spacing: 0.13em;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.014) 0,
+          rgba(0, 0, 0, 0.014) 1px,
+          transparent 1px,
+          transparent 6px
+        );
+      mix-blend-mode: multiply;
+      opacity: 0.85;
+      z-index: 2;
+    }
+
+    body::after {
+      content: "POSLEDNÍ NA ŘADĚ";
+      position: fixed;
+      right: -78px;
+      top: 46%;
+      transform: rotate(90deg);
+      font-size: 10px;
+      letter-spacing: 0.42em;
+      color: rgba(120, 0, 0, 0.55);
+      pointer-events: none;
     }
 
     main {
+      position: relative;
       width: 100%;
       max-width: 720px;
       margin: 0;
-      padding: 36px 58px 24px;
+      padding: 42px 58px 44px;
+      min-height: 100vh;
+      border-left: 1px solid rgba(0, 0, 0, 0.32);
+      border-right: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    main::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: 26px;
+      width: 235px;
+      height: 1px;
+      background: rgba(0, 0, 0, 0.42);
+    }
+
+    main::after {
+      content: "záznam / konec / stopa";
+      position: absolute;
+      bottom: 18px;
+      left: 58px;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: rgba(0, 0, 0, 0.42);
     }
 
     .text {
+      position: relative;
       margin: 0 0 42px;
       line-height: 1.35;
+      text-shadow: 1px 0 rgba(120, 0, 0, 0.16);
+      animation: unease 6s infinite ease-in-out;
+    }
+
+    .text::before {
+      content: "!";
+      position: absolute;
+      left: -28px;
+      top: -4px;
+      color: rgba(120, 0, 0, 0.72);
+      font-size: 18px;
+      font-weight: bold;
     }
 
     .text.second {
       margin-bottom: 96px;
+      animation-delay: 1.2s;
+    }
+
+    .text.second::before {
+      content: "×";
+      color: rgba(120, 0, 0, 0.8);
     }
 
     .binary {
-      margin: 0 0 24px;
+      position: relative;
+      margin: 0 0 42px;
+      padding: 18px 14px 18px 18px;
       font-size: 18px;
       line-height: 1.55;
       white-space: pre-wrap;
       font-weight: normal;
       letter-spacing: 0.08em;
+      border-left: 1px solid rgba(0, 0, 0, 0.5);
+      background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.035), transparent 34%),
+        #ffffff;
+    }
+
+    .binary::before {
+      content: "binární stopa";
+      position: absolute;
+      top: -21px;
+      left: 0;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: rgba(120, 0, 0, 0.72);
     }
 
     .binary .bold {
@@ -50,11 +148,86 @@
     }
 
     .arrows-code {
+      position: relative;
       margin: 0;
+      padding: 14px 16px 16px;
       font-size: 19px;
       line-height: 1.55;
       white-space: pre-wrap;
       letter-spacing: 0.08em;
+      border: 1px solid rgba(0, 0, 0, 0.34);
+      background:
+        linear-gradient(90deg, rgba(120, 0, 0, 0.045), transparent 28%),
+        #ffffff;
+      box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.08);
+      word-break: break-word;
+    }
+
+    .arrows-code::before {
+      content: "směr / pořadí / klíč";
+      position: absolute;
+      top: -22px;
+      left: 0;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      color: rgba(120, 0, 0, 0.72);
+    }
+
+    .arrows-code::after {
+      content: "";
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      width: 28px;
+      height: 28px;
+      border: 1px solid rgba(120, 0, 0, 0.55);
+      border-radius: 50%;
+      opacity: 0.5;
+    }
+
+    @keyframes unease {
+      0%, 100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      50% {
+        opacity: 0.88;
+        transform: translateX(1px);
+      }
+    }
+
+    @media (max-width: 760px) {
+      body {
+        font-size: 18px;
+      }
+
+      main {
+        max-width: none;
+        padding: 36px 26px 44px;
+        border-left: none;
+        border-right: none;
+      }
+
+      main::after {
+        left: 26px;
+      }
+
+      body::after {
+        display: none;
+      }
+
+      .text::before {
+        left: -18px;
+      }
+
+      .binary {
+        font-size: 14px;
+      }
+
+      .arrows-code {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
