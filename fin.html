@@ -133,9 +133,9 @@
       margin-top: 22px;
     }
 
-    .code-table-section {
+    .code-stack-section {
       margin: 0;
-      padding: 22px 16px 22px 18px;
+      padding: 18px 16px;
       border: 2px solid #000000;
       background:
         repeating-linear-gradient(
@@ -147,48 +147,42 @@
         ),
         #ffffff;
       box-shadow: 9px 9px 0 rgba(0, 0, 0, 0.16);
-      overflow-x: auto;
     }
 
-    .code-table {
-      display: grid;
-      grid-template-columns:
-        minmax(170px, 1.8fr) 54px
-        minmax(210px, 2fr) 54px
-        minmax(150px, 1.5fr) 54px
-        minmax(220px, 2fr) 54px;
-      row-gap: 18px;
-      column-gap: 10px;
-      align-items: end;
-      min-width: 980px;
+    .code-block {
+      margin: 0 0 18px;
+      padding: 12px 10px;
+      border: 1px solid rgba(0, 0, 0, 0.55);
+      background: rgba(255, 255, 255, 0.88);
     }
 
-    .code-cell {
-      white-space: normal;
-      line-height: 1.45;
+    .code-block:last-child {
+      margin-bottom: 0;
     }
 
     .phrase {
-      font-size: 14px;
+      margin: 0 0 8px;
+      line-height: 1.45;
       letter-spacing: 0.04em;
     }
 
     .dash {
-      font-size: 22px;
-      font-weight: bold;
+      margin: 0 0 8px;
       text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1;
     }
 
-    .binary-part {
-      font-size: 13px;
-      letter-spacing: 0.04em;
-      font-weight: normal;
-      word-break: break-word;
+    .binary-line {
+      margin: 0;
+      line-height: 1.55;
+      letter-spacing: 0.05em;
+      word-break: normal;
+      overflow-wrap: anywhere;
     }
 
-    .binary-bold {
-      font-size: 13px;
-      letter-spacing: 0.04em;
+    .binary-line.bold {
       font-weight: bold;
       text-align: center;
     }
@@ -217,18 +211,13 @@
         padding: 16px 13px;
       }
 
-      .code-table-section {
-        padding: 18px 13px;
+      .code-stack-section {
+        padding: 16px 13px;
       }
 
       .phrase,
-      .binary-part,
-      .binary-bold {
-        font-size: 12px;
-      }
-
-      .dash {
-        font-size: 20px;
+      .binary-line {
+        font-size: 13px;
       }
     }
   </style>
@@ -246,31 +235,45 @@
       </p>
     </section>
 
-    <section class="section code-table-section">
-      <div class="code-table">
-        <div class="code-cell phrase">♫ O všechno je postaráno ←</div>
-        <div class="code-cell dash">–</div>
+    <section class="section code-stack-section">
+      <div class="code-block">
+        <p class="phrase">♫ O všechno je postaráno ←</p>
+        <p class="binary-line">01000101 01010010 01010010 01000101</p>
+      </div>
 
-        <div class="code-cell phrase">♫ Město mě se žárem rozpadá →</div>
-        <div class="code-cell dash">–</div>
+      <div class="code-block">
+        <p class="dash">–</p>
+        <p class="binary-line bold">00100000</p>
+      </div>
 
-        <div class="code-cell phrase">♪ zrozená z šera →</div>
-        <div class="code-cell dash">–</div>
+      <div class="code-block">
+        <p class="phrase">♫ Město mě se žárem rozpadá →</p>
+        <p class="binary-line">01010101 01010010 01000101 01010100</p>
+      </div>
 
-        <div class="code-cell phrase">♫ skončíš brzy na mém meči ←</div>
-        <div class="code-cell dash">–</div>
+      <div class="code-block">
+        <p class="dash">–</p>
+        <p class="binary-line bold">00100000</p>
+      </div>
 
-        <div class="code-cell binary-part">01000101 01010010 01010010 01000101</div>
-        <div class="code-cell binary-bold">00100000</div>
+      <div class="code-block">
+        <p class="phrase">♪ zrozená z šera →</p>
+        <p class="binary-line">01001100 01001110 01001001 01000100</p>
+      </div>
 
-        <div class="code-cell binary-part">01010101 01010010 01000101 01010100</div>
-        <div class="code-cell binary-bold">00100000</div>
+      <div class="code-block">
+        <p class="dash">–</p>
+        <p class="binary-line bold">00100000</p>
+      </div>
 
-        <div class="code-cell binary-part">01001100 01001110 01001001 01000100</div>
-        <div class="code-cell binary-bold">00100000</div>
+      <div class="code-block">
+        <p class="phrase">♫ skončíš brzy na mém meči ←</p>
+        <p class="binary-line">01001010 01001001 01001011 01011000 01000111</p>
+      </div>
 
-        <div class="code-cell binary-part">01001010 01001001 01001011 01011000 01000111</div>
-        <div class="code-cell binary-bold">00100001</div>
+      <div class="code-block">
+        <p class="dash">–</p>
+        <p class="binary-line bold">00100001</p>
       </div>
     </section>
   </main>
