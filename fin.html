@@ -149,6 +149,19 @@
       box-shadow: 9px 9px 0 rgba(0, 0, 0, 0.16);
     }
 
+    .table-title {
+      margin: 0 0 18px;
+      padding: 14px 10px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.4;
+      letter-spacing: 0.08em;
+      border: 2px solid rgba(0, 0, 0, 0.75);
+      background: #ffffff;
+      box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.12);
+    }
+
     .code-block {
       margin: 0 0 18px;
       padding: 12px 10px;
@@ -162,14 +175,27 @@
 
     .phrase {
       margin: 0 0 8px;
+      text-align: center;
       line-height: 1.45;
       letter-spacing: 0.04em;
+    }
+
+    .music,
+    .arrow {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1;
+      vertical-align: -0.08em;
+    }
+
+    .phrase-text {
+      font-size: 14px;
     }
 
     .dash {
       margin: 0 0 8px;
       text-align: center;
-      font-size: 24px;
+      font-size: 28px;
       font-weight: bold;
       line-height: 1;
     }
@@ -180,6 +206,7 @@
       letter-spacing: 0.05em;
       word-break: normal;
       overflow-wrap: anywhere;
+      text-align: center;
     }
 
     .binary-line.bold {
@@ -215,9 +242,18 @@
         padding: 16px 13px;
       }
 
-      .phrase,
+      .table-title {
+        font-size: 14px;
+      }
+
+      .phrase-text,
       .binary-line {
         font-size: 13px;
+      }
+
+      .music,
+      .arrow {
+        font-size: 22px;
       }
     }
   </style>
@@ -236,8 +272,14 @@
     </section>
 
     <section class="section code-stack-section">
+      <p class="table-title">Binár je opravdu bizár, že?</p>
+
       <div class="code-block">
-        <p class="phrase">♫ O všechno je postaráno ←</p>
+        <p class="phrase">
+          <span class="music">♫</span>
+          <span class="phrase-text">O všechno je postaráno</span>
+          <span class="arrow">←</span>
+        </p>
         <p class="binary-line">01000101 01010010 01010010 01000101</p>
       </div>
 
@@ -247,7 +289,11 @@
       </div>
 
       <div class="code-block">
-        <p class="phrase">♫ Město mě se žárem rozpadá →</p>
+        <p class="phrase">
+          <span class="music">♫</span>
+          <span class="phrase-text">Město mě se žárem rozpadá</span>
+          <span class="arrow">→</span>
+        </p>
         <p class="binary-line">01010101 01010010 01000101 01010100</p>
       </div>
 
@@ -257,7 +303,11 @@
       </div>
 
       <div class="code-block">
-        <p class="phrase">♪ zrozená z šera →</p>
+        <p class="phrase">
+          <span class="music">♪</span>
+          <span class="phrase-text">zrozená z šera</span>
+          <span class="arrow">→</span>
+        </p>
         <p class="binary-line">01001100 01001110 01001001 01000100</p>
       </div>
 
@@ -267,7 +317,11 @@
       </div>
 
       <div class="code-block">
-        <p class="phrase">♫ skončíš brzy na mém meči ←</p>
+        <p class="phrase">
+          <span class="music">♫</span>
+          <span class="phrase-text">skončíš brzy na mém meči</span>
+          <span class="arrow">←</span>
+        </p>
         <p class="binary-line">01001010 01001001 01001011 01011000 01000111</p>
       </div>
 
