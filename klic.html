@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Klíč</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #ffffff;
+      color: #000000;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 21px;
+      letter-spacing: 0.13em;
+    }
+
+    main {
+      width: 100%;
+      max-width: 680px;
+      margin: 0;
+      padding: 6px 32px 24px;
+    }
+
+    .intro {
+      margin: 0 0 72px;
+      line-height: 1.35;
+    }
+
+    .arrows-image {
+      display: block;
+      width: 220px;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto 30px;
+    }
+
+    .cipher {
+      margin: 0 0 34px;
+      line-height: 1.45;
+      word-break: break-word;
+    }
+
+    .box {
+      margin: 0 -32px 0;
+      padding: 74px 32px 26px;
+      border: 1px dashed #bdbdbd;
+      min-height: 408px;
+    }
+
+    .hint {
+      margin: 0 0 16px;
+      line-height: 1.35;
+      font-size: 19px;
+      letter-spacing: 0.12em;
+    }
+
+    .key {
+      margin: 0 0 118px;
+      font-size: 26px;
+      letter-spacing: 0.15em;
+      line-height: 1.35;
+    }
+
+    .binary {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      font-weight: normal;
+      letter-spacing: 0.08em;
+    }
+
+    .binary .bold {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <p class="intro">
+      Vzpomínáš si? Já nezapomínám. Osud si tě<br>
+      najde!
+    </p>
+
+    <!--
+      Obrázek se šipkami dej do stejné složky jako tento HTML soubor
+      a pojmenuj ho sipky.png
+    -->
+    <img class="arrows-image" src="./sipky.png" alt="Šipky" />
+
+    <p class="cipher">
+      RYPZCVXLDUSONEQMFGZIFAJLHNWIRKJMSABI<br>
+      EVPSKLTROWCDSXBCFHZE
+    </p>
+
+    <section class="box">
+      <p class="hint">K TAJEMSTVÍ POTŘEBUJEŠ KLÍČ</p>
+
+      <p class="key">AHNŘNÍCAH♪</p>
+
+      <p class="binary">01000001 01001110 01001110 01000001
+<span class="bold">00100000</span> 01000010 01011001 01001100
+01000001 <span class="bold">00100000</span> 01001101 01001111 01001010
+01000101 <span class="bold">00100000</span> 01000100 01000011
+01000101 01010010 01000001 <span class="bold">00100001</span></p>
+    </section>
+  </main>
+</body>
+</html>
