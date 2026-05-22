@@ -184,7 +184,6 @@
     .group-3 { background: var(--c3); }
     .group-4 { background: var(--c4); }
 
-    /* MALÁ OKÉNKA POD BINÁREM */
     .notes-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -223,10 +222,17 @@
       line-height: 1;
     }
 
+    .mini-note .arrow-wrap {
+      display: inline-block;
+      font-size: 2.4em;
+      font-weight: 900;
+      line-height: 1;
+    }
+
     .mini-note .arrow {
       display: inline-block;
-      font-size: 3em;
-      font-weight: bold;
+      font-size: 1em;
+      font-weight: 900;
       line-height: 1;
     }
 
@@ -283,8 +289,8 @@
         font-size: 2.5em;
       }
 
-      .mini-note .arrow {
-        font-size: 2.7em;
+      .mini-note .arrow-wrap {
+        font-size: 2.2em;
       }
 
       .mini-note .note-text {
@@ -323,25 +329,25 @@
       <div class="mini-note note-1">
         <div class="symbol-row"><span class="symbol">𝄞</span></div>
         <div class="note-text">o všechno je postaráno</div>
-        <div class="arrow-row"><span class="arrow">←</span></div>
+        <div class="arrow-row"><span class="arrow-wrap">(<span class="arrow">←</span>)</span></div>
       </div>
 
       <div class="mini-note note-2">
         <div class="symbol-row"><span class="symbol">♫</span></div>
         <div class="note-text">město mě se žárem rozpadá</div>
-        <div class="arrow-row"><span class="arrow">→</span></div>
+        <div class="arrow-row"><span class="arrow-wrap">(<span class="arrow">→</span>)</span></div>
       </div>
 
       <div class="mini-note note-3">
         <div class="symbol-row"><span class="symbol">♪</span></div>
         <div class="note-text">zrozená z šera</div>
-        <div class="arrow-row"><span class="arrow">→</span></div>
+        <div class="arrow-row"><span class="arrow-wrap">(<span class="arrow">→</span>)</span></div>
       </div>
 
       <div class="mini-note note-4">
         <div class="symbol-row"><span class="symbol">♬</span></div>
         <div class="note-text">skončíš brzy na mém meči</div>
-        <div class="arrow-row"><span class="arrow">←</span></div>
+        <div class="arrow-row"><span class="arrow-wrap">(<span class="arrow">←</span>)</span></div>
       </div>
     </section>
   </main>
