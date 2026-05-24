@@ -10,6 +10,13 @@
       box-sizing: border-box;
     }
 
+    :root {
+      --c1: rgba(220, 50, 47, 0.30);   /* červená */
+      --c2: rgba(38, 139, 210, 0.30);  /* modrá */
+      --c3: rgba(230, 190, 0, 0.38);   /* žlutá */
+      --c4: rgba(46, 160, 67, 0.30);   /* zelená */
+    }
+
     html {
       background: #ffffff;
     }
@@ -134,14 +141,14 @@
     }
 
     .binary-section {
-      margin: 0 0 54px;
+      margin: 0 0 18px;
     }
 
     .binary {
       margin: 0;
       padding: 22px 16px 22px 18px;
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.9;
       font-weight: normal;
       letter-spacing: 0.06em;
       border: 2px solid #000000;
@@ -164,30 +171,80 @@
       font-weight: bold;
     }
 
-    .arrows-section {
-      margin: 0;
+    .bin-group {
+      display: inline;
+      padding: 2px 5px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      border-radius: 2px;
     }
 
-    .arrows-code {
-      margin: 0;
-      padding: 22px 16px 22px 18px;
-      font-size: 14px;
-      line-height: 1.7;
-      white-space: normal;
-      letter-spacing: 0.06em;
-      word-break: normal;
-      overflow-wrap: anywhere;
-      border: 2px solid #000000;
-      background:
-        repeating-linear-gradient(
-          90deg,
-          rgba(120, 0, 0, 0.07) 0px,
-          rgba(120, 0, 0, 0.07) 1px,
-          transparent 1px,
-          transparent 12px
-        ),
-        #ffffff;
-      box-shadow: 9px 9px 0 rgba(0, 0, 0, 0.16);
+    .group-1 { background: var(--c1); }
+    .group-2 { background: var(--c2); }
+    .group-3 { background: var(--c3); }
+    .group-4 { background: var(--c4); }
+
+    .notes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .mini-note {
+      min-height: 118px;
+      padding: 10px 10px 8px;
+      border: 2px solid rgba(0, 0, 0, 0.68);
+      box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: stretch;
+      text-align: center;
+    }
+
+    .mini-note.note-1 { background: var(--c1); }
+    .mini-note.note-2 { background: var(--c2); }
+    .mini-note.note-3 { background: var(--c3); }
+    .mini-note.note-4 { background: var(--c4); }
+
+    .mini-note .symbol-row,
+    .mini-note .arrow-row {
+      width: 100%;
+      text-align: center;
+      line-height: 1;
+    }
+
+    .mini-note .symbol {
+      display: inline-block;
+      font-size: 2.8em;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    .mini-note .arrow-wrap {
+      display: inline-block;
+      font-size: 2.4em;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .mini-note .arrow {
+      display: inline-block;
+      font-size: 1em;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .mini-note .note-text {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.35;
+      letter-spacing: 0.03em;
+      font-weight: bold;
+      padding: 2px 0;
     }
 
     @media (max-width: 520px) {
@@ -197,6 +254,7 @@
 
       main {
         max-width: none;
+        min-height: auto;
         padding: 52px 26px 58px;
         border-left: 2px solid #000;
       }
@@ -214,9 +272,29 @@
         padding: 16px 13px;
       }
 
-      .binary,
-      .arrows-code {
+      .binary {
         font-size: 13px;
+      }
+
+      .notes-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .mini-note {
+        min-height: 104px;
+      }
+
+      .mini-note .symbol {
+        font-size: 2.5em;
+      }
+
+      .mini-note .arrow-wrap {
+        font-size: 2.2em;
+      }
+
+      .mini-note .note-text {
+        font-size: 12px;
       }
     }
   </style>
@@ -235,11 +313,42 @@
     </section>
 
     <section class="section binary-section">
-    <p class="binary">01000101 01010010 01010010 01000101 <span class="bold">00100000</span> 01010101 01010010 01000101 01010100 <span class="bold">00100000</span> 01001100 01001110 01001001 01000100 <span class="bold">00100000</span> 01001010 01001001 01001011 01011000 01000111 <span class="bold">00100001</span></p>
+      <p class="binary">
+        <span class="bin-group group-1">01000101 01010010 01010010 01000101</span>
+        <span class="bold">00100000</span>
+        <span class="bin-group group-2">01010101 01010010 01000101 01010100</span>
+        <span class="bold">00100000</span>
+        <span class="bin-group group-3">01001100 01001110 01001001 01000100</span>
+        <span class="bold">00100000</span>
+        <span class="bin-group group-4">01001010 01001001 01001011 01011000 01000111</span>
+        <span class="bold">00100001</span>
+      </p>
     </section>
 
-    <section class="section arrows-section">
-      <p class="arrows-code">1↑3↓2↓5↑0- 4↓3↑2↑2↓0- 3↑1↑5↓3↓0- 4↑6↑2↓4↓5↓0-</p>
+    <section class="notes-grid">
+      <div class="mini-note note-1">
+        <div class="symbol-row"><span class="symbol">𝄞</span></div>
+        <div class="note-text">o všechno je postaráno</div>
+        <div class="arrow-row"><span class="arrow-wrap">(<span class="arrow">←</span>)</span></div>
+      </div>
+
+      <div class="mini-note note-2">
+        <div class="symbol-row"><span class="symbol">♫</span></div>
+        <div class="note-text">město mě se žárem rozpadá</div>
+        <div class="arrow-row"><span class="arrow-wrap">(<span class="arrow">→</span>)</span></div>
+      </div>
+
+      <div class="mini-note note-3">
+        <div class="symbol-row"><span class="symbol">♪</span></div>
+        <div class="note-text">zrozená z šera</div>
+        <div class="arrow-row"><span class="arrow-wrap">(<span class="arrow">→</span>)</span></div>
+      </div>
+
+      <div class="mini-note note-4">
+        <div class="symbol-row"><span class="symbol">♬</span></div>
+        <div class="note-text">skončíš brzy na mém meči</div>
+        <div class="arrow-row"><span class="arrow-wrap">(<span class="arrow">←</span>)</span></div>
+      </div>
     </section>
   </main>
 </body>
